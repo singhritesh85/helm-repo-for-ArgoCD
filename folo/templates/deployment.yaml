@@ -15,6 +15,7 @@ spec:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
+        instrumentation.opentelemetry.io/inject-java: "true"
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
